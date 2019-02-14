@@ -1,0 +1,151 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% based on LaTeX Template: Curriculum Vitae
+%
+% Source: http://www.howtotex.com/
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[paper=a4,fontsize=11pt]{scrartcl} % KOMA-article class
+							
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{amsmath,amsfonts,amsthm}     % Math packages
+\usepackage{graphicx}                    % Enable pdflatex
+\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+\usepackage{geometry}
+	\textheight=700px                    % Saving trees ;-)
+\usepackage{url}
+\hyphenpenalty=10000
+\hbadness=10000
+\frenchspacing              % Better looking spacings after periods
+\pagestyle{empty}           % No pagenumbers/headers/footers
+
+%%% Custom sectioning (sectsty package)
+%%% ------------------------------------------------------------
+\usepackage{sectsty}
+
+\sectionfont{%			            % Change font of \section command
+	\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
+	\sectionrule{0pt}{0pt}{-5pt}{3pt}}
+
+%%% Macros
+%%% ------------------------------------------------------------
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}			% Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}		% Vertical space macro
+
+\newcommand{\MyName}[1]{ % Name
+	\Huge \usefont{OT1}{phv}{b}{n} \hfill #1
+	\par \normalsize \normalfont}
+	
+\newcommand{\MySlogan}[1]{ % Slogan (optional)
+	\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
+	\par \normalsize \normalfont}
+
+\newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
+
+\newcommand{\PersonalEntry}[2]{
+	\noindent\hangindent=2em\hangafter=0 % Indentation
+	\parbox{\spacebox}{        % Box to align text
+	\textit{#1}}               % Entry name (birth, address, etc.)
+	\hspace{1.5em} #2 \par}    % Entry value
+
+\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
+	\noindent\hangindent=2em\hangafter=0 % Indentation
+	\parbox{\spacebox}{        % Box to align text
+	\textit{#1}}               % Entry name (birth, address, etc.)
+	\hspace{1.5em} #2 \par}    % Entry value	
+	
+\newcommand{\EducationEntry}[4]{
+	\noindent \textbf{#1} \hfill      % Study
+		\parbox{6em}{%
+		#2} \par                  % Duration
+	\noindent \textit{#3} \par        % School
+	\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+	\normalsize \par}
+
+\newcommand{\WorkEntry}[4]{  % Same as \EducationEntry
+	\noindent \textbf{#1} \hfill      % Jobname
+	\colorbox{Black}{\color{White}#2} \par  % Duration
+	\noindent \textit{#3} \par              % Company
+	\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+	\normalsize \par}
+
+%%% Begin Document
+%%% ------------------------------------------------------------
+\begin{document}
+% you can upload a photo and include it here...
+%\begin{wrapfigure}{l}{0.5\textwidth}
+%	\vspace*{-2em}
+%		\includegraphics[width=0.15\textwidth]{photo}
+%\end{wrapfigure}
+
+\MyName{Joel Hutton}
+
+\sepspace
+
+%%% Personal details
+%%% ------------------------------------------------------------
+\NewPart{Personal details}{}
+
+\PersonalEntry{Address}{32 Pearl Close, Cambridge, CB4 1QD}
+\PersonalEntry{Phone}{07365536032}
+\PersonalEntry{Mail}{\url{jah1809@gmail.com}}
+
+%%% Education
+%%% ------------------------------------------------------------
+\NewPart{Education}{}
+
+\EducationEntry{BEng. Computer Science and Electronics (1st) }
+	{2013-2017}
+	{University of Edinburgh}
+	{
+		NEC semiconductor prize for excellence in first year
+		engineering.
+	}
+\EducationEntry{Scottish Highers }
+	{2008-2013}
+	{Balfron High School}
+	{
+		English: \textbf{A},
+		Maths: \textbf{A},
+		Physics: \textbf{A},
+		Chemistry: \textbf{A},
+		Biology: \textbf{A},
+	}
+
+%%% Work experience
+%%% ------------------------------------------------------------
+\NewPart{Work experience}{}
+
+\EducationEntry{Firmware Engineer - Trusted Firmware}
+	{2017-present}
+	{Arm, Full-time}
+	{Firmware engineering in C, Arm v8-A assembly and Arm v7-A assembly.
+		tools in C. Continuous integration in shell and Python.
+		Produced Spectre mitigations in Trusted Firmware.
+	}
+\EducationEntry{Software Engineer}
+	{2014}
+	{Interface3/Tigerface Games, Full-time}
+	{Produced a series of multi platform games for autistic children using
+	the Unity game engine, programming in C\#. Acted as the core developer,
+	working alongside a graphic designer. Produced four games targeting
+	mobile platforms. Other short term projects such as an app for mental
+	health Scotland, (SAMH) using HTML, CSS, JavaScript etc.
+	}
+%%% Skills
+%%% ------------------------------------------------------------
+\NewPart{Skills}{}
+
+\SkillsEntry{Programming languages}
+	{C, Python, Shell, Arm v8-A assembly, Arm v7-A assembly}
+
+\SkillsEntry{Software development}
+	{Git, Gerrit, Jenkins, Docker, Formal verification of software
+	using cbmc}
+
+%%% References
+%%% ------------------------------------------------------------
+\NewPart{References}{}
+Dimitris Papastomos - line manager - Arm - Dimitris.Papastomos@arm.com
+\end{document}
