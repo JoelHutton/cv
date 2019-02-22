@@ -12,6 +12,7 @@
 \usepackage{graphicx}                    % Enable pdflatex
 \usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
 \usepackage{geometry}
+\usepackage{hyperref}
 	\textheight=700px                    % Saving trees ;-)
 \usepackage{url}
 \hyphenpenalty=10000
@@ -33,9 +34,12 @@
 \settowidth{\spacebox}{8888888888}			% Box to align text
 \newcommand{\sepspace}{\vspace*{1em}}		% Vertical space macro
 
-\newcommand{\MyName}[1]{ % Name
+\newcommand{\MyName}[2]{ % Name
 	\Huge \usefont{OT1}{phv}{b}{n} \hfill #1
-	\par \normalsize \normalfont}
+	\par \normalsize \normalfont
+	\usefont{OT1}{phv}{b}{n} \hfill latest version:\href{http://joelhutton.me/cv.pdf}{joelhutton.me/cv.pdf}
+	\par \normalsize \normalfont
+	}
 	
 \newcommand{\MySlogan}[1]{ % Slogan (optional)
 	\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
@@ -88,8 +92,8 @@
 \NewPart{Personal details}{}
 
 \PersonalEntry{Address}{32 Pearl Close, Cambridge, CB4 1QD}
-\PersonalEntry{Phone}{07365536032}
-\PersonalEntry{Mail}{\url{jah1809@gmail.com}}
+\PersonalEntry{Phone}{\href{tel:+447365536032}{+447365536032}}
+\PersonalEntry{Mail}{\href{mailto:jah1809@gmail.com}{jah1809@gmail.com}}
 
 %%% Education
 %%% ------------------------------------------------------------
@@ -110,7 +114,7 @@
 		Maths: \textbf{A},
 		Physics: \textbf{A},
 		Chemistry: \textbf{A},
-		Biology: \textbf{A},
+		Biology: \textbf{A}
 	}
 
 %%% Work experience
