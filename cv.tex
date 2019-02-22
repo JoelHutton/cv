@@ -11,10 +11,11 @@
 \usepackage{amsmath,amsfonts,amsthm}     % Math packages
 \usepackage{graphicx}                    % Enable pdflatex
 \usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
-\usepackage{geometry}
+\usepackage[left=2cm, right=1.4cm, top=1cm, bottom=1cm]{geometry}
 \usepackage{hyperref}
 	\textheight=700px                    % Saving trees ;-)
 \usepackage{url}
+\usepackage{titlesec}
 \hyphenpenalty=10000
 \hbadness=10000
 \frenchspacing              % Better looking spacings after periods
@@ -38,54 +39,33 @@
 	\Huge \usefont{OT1}{phv}{b}{n} \hfill #1
 	\par \normalsize \normalfont
 	\usefont{OT1}{phv}{b}{n} \hfill latest version:\href{http://joelhutton.me/cv.pdf}{joelhutton.me/cv.pdf}
-	\par \normalsize \normalfont
+	\normalsize \normalfont
 	}
 	
-\newcommand{\MySlogan}[1]{ % Slogan (optional)
-	\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
-	\par \normalsize \normalfont}
-
 \newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
 
 \newcommand{\PersonalEntry}[2]{
 	\noindent\hangindent=2em\hangafter=0 % Indentation
 	\parbox{\spacebox}{        % Box to align text
 	\textit{#1}}               % Entry name (birth, address, etc.)
-	#2 \par}    % Entry value
+	#2 \small \par \normalsize}    % Entry value
 
 \newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
 	\noindent \textbf{#1} \hfill      % Study
 	\par
 	\noindent\hangindent=5em\hangafter=0 \small #2 % Description
-	\normalsize \par}
+	\small \par \normalsize}
 	
-\newcommand{\EducationEntry}[4]{
+\newcommand{\OccupationEntry}[4]{
 	\noindent \textbf{#1} \hfill      % Study
 		\parbox{6em}{%
 		#2} \par                  % Duration
 	\noindent \textit{#3} \par        % School
 	\noindent\hangindent=2em\hangafter=0 \small #4 % Description
-	\normalsize \par}
-
-\newcommand{\WorkEntry}[4]{  % Same as \EducationEntry
-	\noindent \textbf{#1} \hfill      % Jobname
-	\colorbox{Black}{\color{White}#2} \par  % Duration
-	\noindent \textit{#3} \par              % Company
-	\noindent\hangindent=2em\hangafter=0 \small #4 % Description
-	\normalsize \par}
-
-%%% Begin Document
-%%% ------------------------------------------------------------
+	\small \par \normalsize}
 \begin{document}
-% you can upload a photo and include it here...
-%\begin{wrapfigure}{l}{0.5\textwidth}
-%	\vspace*{-2em}
-%		\includegraphics[width=0.15\textwidth]{photo}
-%\end{wrapfigure}
 
 \MyName{Joel Hutton}
-
-\sepspace
 
 %%% Personal details
 %%% ------------------------------------------------------------
@@ -99,14 +79,14 @@
 %%% ------------------------------------------------------------
 \NewPart{Education}{}
 
-\EducationEntry{BEng. Computer Science and Electronics (1st) }
+\OccupationEntry{BEng. Computer Science and Electronics (1st) }
 	{2013-2017}
 	{University of Edinburgh}
 	{
 		NEC semiconductor prize for excellence in first year
 		engineering.
 	}
-\EducationEntry{Scottish Highers }
+\OccupationEntry{Scottish Highers }
 	{2008-2013}
 	{Balfron High School}
 	{
@@ -119,16 +99,29 @@
 
 %%% Work experience
 %%% ------------------------------------------------------------
-\NewPart{Work experience}{}
+\NewPart{Employment history}{}
 
-\EducationEntry{Firmware Engineer - Trusted Firmware}
+\OccupationEntry{Firmware Engineer - Trusted Firmware}
 	{2017-present}
 	{Arm, Full-time}
 	{Firmware engineering in C, Arm v8-A assembly and Arm v7-A assembly.
-		Tools in C. Continuous integration in Shell and Python.
-		Produced Spectre mitigations in Trusted Firmware.
+		Tools in C. Owner of continuous integration in Shell and Python.
+		Produced Spectre mitigations in Trusted Firmware, significant
+		memory optimisations.
 	}
-\EducationEntry{Software Engineer}
+\OccupationEntry{Software Engineer}
+	{2018}
+	{Arm, Full-time secondment}
+	{
+	Researching Mixed Reality technologies, developing test applications
+	in Unity.
+		}
+\OccupationEntry{Tutor}
+	{2015-2017}
+	{Self-employed, part-time}
+	{Tutoring of high school students in Maths, Physics and Computer
+	Science while studying}
+\OccupationEntry{Software Engineer}
 	{2014}
 	{Interface3/Tigerface Games, Full-time}
 	{Produced a series of multi platform games for autistic children using
@@ -137,19 +130,19 @@
 	mobile platforms. Other short term projects such as an app for Mental
 	Health Scotland, (SAMH) using HTML, CSS, JavaScript etc.
 	}
+\OccupationEntry{Software Engineer}
+	{2014}
+	{Chamberlain McBain, Full-time}
+	{Front-end and back-end web development in PHP, HTML, CSS, Javascript, SQL etc.}
 %%% Skills
 %%% ------------------------------------------------------------
 \NewPart{Skills}{}
-
 \SkillsEntry{Programming languages}
 	{C, Python, Shell, Arm v8-A assembly, Arm v7-A assembly}
-
 \SkillsEntry{Software development}
-	{Git, Gerrit, Jenkins, Docker, Formal verification of software
-	using cbmc}
+	{Git, Gerrit, Jenkins, Docker, CBMC formal verification}
+\NewPart{About me}{
+			In my free time, I enjoy climbing, motorbikes and squash.
+		}
 
-%%% References
-%%% ------------------------------------------------------------
-\NewPart{References}{}
-Dimitris Papastomos - line manager - Arm - Dimitris.Papastomos@arm.com
 \end{document}
