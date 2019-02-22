@@ -51,13 +51,13 @@
 	\noindent\hangindent=2em\hangafter=0 % Indentation
 	\parbox{\spacebox}{        % Box to align text
 	\textit{#1}}               % Entry name (birth, address, etc.)
-	\hspace{1.5em} #2 \par}    % Entry value
+	#2 \par}    % Entry value
 
 \newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
-	\noindent\hangindent=2em\hangafter=0 % Indentation
-	\parbox{\spacebox}{        % Box to align text
-	\textit{#1}}               % Entry name (birth, address, etc.)
-	\hspace{1.5em} #2 \par}    % Entry value	
+	\noindent \textbf{#1} \hfill      % Study
+	\par
+	\noindent\hangindent=5em\hangafter=0 \small #2 % Description
+	\normalsize \par}
 	
 \newcommand{\EducationEntry}[4]{
 	\noindent \textbf{#1} \hfill      % Study
@@ -93,7 +93,7 @@
 
 \PersonalEntry{Address}{32 Pearl Close, Cambridge, CB4 1QD}
 \PersonalEntry{Phone}{\href{tel:+447365536032}{+447365536032}}
-\PersonalEntry{Mail}{\href{mailto:jah1809@gmail.com}{jah1809@gmail.com}}
+\PersonalEntry{Email}{\href{mailto:jah1809@gmail.com}{jah1809@gmail.com}}
 
 %%% Education
 %%% ------------------------------------------------------------
