@@ -42,7 +42,7 @@
 	\normalsize \normalfont
 	}
 	
-\newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
+\newcommand{\NewPart}[1]{\vspace*{-0.4cm}\section*{\uppercase{#1}}}
 
 \newcommand{\PersonalEntry}[2]{
 	\noindent\hangindent=2em\hangafter=0 % Indentation
@@ -62,7 +62,7 @@
 		#2} \small \par \normalsize                   % Duration
 	\noindent \textit{#3} \small \par \normalsize         % School
 	\noindent\hangindent=2em\hangafter=0 \small #4 % Description
-	\small \par \normalsize}
+	\normalsize \par \normalsize}
 \begin{document}
 
 \MyName{Joel Hutton}
@@ -70,7 +70,6 @@
 %%% Personal details
 %%% ------------------------------------------------------------
 \NewPart{Contact details}{}
-
 \PersonalEntry{Address}{32 Pearl Close, Cambridge, CB4 1QD}
 \PersonalEntry{Phone}{\href{tel:+447365536032}{+447365536032}}
 \PersonalEntry{Email}{\href{mailto:jah1809@gmail.com}{jah1809@gmail.com}}
@@ -106,8 +105,8 @@
 	{Arm, Full-time}
 	{Firmware engineering in C, Arm v8-A assembly and Arm v7-A assembly.
 		Tools in C. Owner of continuous integration in Shell and Python.
-		Produced Spectre mitigations in Trusted Firmware, significant
-		memory optimisations.
+		Produced Spectre mitigations in Trusted Firmware, made
+		significant memory optimisations.
 	}
 \OccupationEntry{Software Engineer}
 	{2018}
@@ -121,6 +120,14 @@
 	{Self-employed, part-time}
 	{Tutoring of high school students in Maths, Physics and Computer
 	Science while studying}
+\OccupationEntry{Software Intern}
+	{2016}
+	{Arm, Full-time}
+	{Workload automation for testing of the Energy Aware Scheduler (EAS)}
+\OccupationEntry{Software Intern}
+	{2015}
+	{Arm, Full-time}
+	{Dev-Ops scripting}
 \OccupationEntry{Software Engineer}
 	{2014}
 	{Interface3/Tigerface Games, Full-time}
@@ -134,15 +141,16 @@
 	{2014}
 	{Chamberlain McBain, Full-time}
 	{Front-end and back-end web development in PHP, HTML, CSS, Javascript, SQL etc.}
+\OccupationEntry{STEM Teacher}
+	{2013}
+	{COSAT Khayelitsha-Cape Town, Full-time volunteer}
+	{General STEM teaching of high school children in an underprivileged
+	community}
 %%% Skills
 %%% ------------------------------------------------------------
 \NewPart{Skills}{}
 \SkillsEntry{Programming languages}
 	{C, Python, Shell, Arm v8-A assembly, Arm v7-A assembly}
 \SkillsEntry{Software development}
-	{Git, Gerrit, Jenkins, Docker, CBMC formal verification}
-\NewPart{About me}{
-			In my free time, I enjoy climbing, motorbikes and squash.
-		}
-
+	{Git, Gerrit, Jenkins, Docker, Baremetal debugging, CBMC formal verification}
 \end{document}
