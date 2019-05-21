@@ -57,9 +57,7 @@
 	\small \par \normalsize}
 	
 \newcommand{\OccupationEntry}[4]{
-	\noindent \textbf{#1} \hfill                         % Study
-		\parbox{6em}{%
-		#2} \small \par \normalsize                   % Duration
+	\noindent \textbf{#1} \hfill \textbf{#2} \small \par \normalsize                   % Duration
 	\noindent \textit{#3} \small \par \normalsize         % School
 	\noindent\hangindent=2em\hangafter=0 \small #4 % Description
 	\normalsize \par \normalsize}
@@ -100,8 +98,15 @@
 %%% ------------------------------------------------------------
 \NewPart{Employment history}{}
 
+\OccupationEntry{Compiler Engineer - GNU Tools}
+	{2019-present}
+	{Arm, Full-time}
+	{
+		Architectural enablement for Arm v8-A. Working on GCC and
+		Binutils.
+	}
 \OccupationEntry{Firmware Engineer - Trusted Firmware}
-	{2017-present}
+	{2017-2019}
 	{Arm, Full-time}
 	{Firmware engineering in C, Arm v8-A assembly and Arm v7-A assembly.
 		Tools in C. Owner of continuous integration in Shell and Python.
@@ -140,11 +145,12 @@
 \OccupationEntry{Software Engineer}
 	{2014}
 	{Chamberlain McBain, Full-time}
-	{Front-end and back-end web development in PHP, HTML, CSS, Javascript, SQL etc.}
+	{Front-end and back-end web development in PHP, HTML, CSS, Javascript,
+	SQL etc. Developing multi-user system.}
 \OccupationEntry{STEM Teacher}
 	{2013}
 	{COSAT Khayelitsha-Cape Town, Full-time volunteer}
-	{General STEM teaching of high school children in an underprivileged
+	{Volunteer STEM teaching of high school children in an underprivileged
 	community}
 %%% Skills
 %%% ------------------------------------------------------------
