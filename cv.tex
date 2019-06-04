@@ -3,63 +3,50 @@
 %
 % Source: http://www.howtotex.com/
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass[paper=a4,fontsize=11pt]{scrartcl} % KOMA-article class
-							
+\documentclass[paper=a4,fontsize=11pt]{scrartcl} 		% KOMA-article class
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage[protrusion=true,expansion=true]{microtype}
-\usepackage{amsmath,amsfonts,amsthm}     % Math packages
-\usepackage{graphicx}                    % Enable pdflatex
-\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+\usepackage{amsmath,amsfonts,amsthm}				% Math packages
+\usepackage{graphicx}						% Enable pdflatex
 \usepackage[left=2cm, right=1.4cm, top=1cm, bottom=1cm]{geometry}
 \usepackage{hyperref}
-	\textheight=700px                    % Saving trees ;-)
-\usepackage{url}
-\usepackage{titlesec}
-\hyphenpenalty=10000
-\hbadness=10000
-\frenchspacing              % Better looking spacings after periods
-\pagestyle{empty}           % No pagenumbers/headers/footers
-
-%%% Custom sectioning (sectsty package)
-%%% ------------------------------------------------------------
-\usepackage{sectsty}
-
-\sectionfont{%			            % Change font of \section command
-	\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
-	\sectionrule{0pt}{0pt}{-5pt}{3pt}}
-
-%%% Macros
-%%% ------------------------------------------------------------
-\newlength{\spacebox}
-\settowidth{\spacebox}{8888888888}			% Box to align text
-\newcommand{\sepspace}{\vspace*{1em}}		% Vertical space macro
+\textheight=700px
+\frenchspacing
+\pagestyle{empty}						% No pagenumbers/headers/footers
 
 \newcommand{\MyName}[2]{ % Name
-	\Huge \usefont{OT1}{phv}{b}{n} \hfill #1
-	\par \normalsize \normalfont
-	\usefont{OT1}{phv}{b}{n} \hfill latest version:\href{http://joelhutton.me/cv.pdf}{joelhutton.me/cv.pdf}
-	\normalsize \normalfont
+	\begin{center}
+		\Huge #1 \\
+	\end{center}
 	}
-	
-\newcommand{\NewPart}[1]{\vspace*{-0.4cm}\section*{\uppercase{#1}}}
+
+\newcommand{\NewPart}[1]{
+	\vspace*{-4mm}
+	\section*{\uppercase{#1}}				%Title
+	\vspace*{-7mm}
+	\noindent\rule{\textwidth}{1pt}
+	\vspace*{-3mm}
+	\\
+	}
+
+\newcommand{\middledot}{
+	$ \cdot $
+}
 
 \newcommand{\PersonalEntry}[2]{
-	\noindent\hangindent=2em\hangafter=0 % Indentation
-	\parbox{\spacebox}{        % Box to align text
-	\textit{#1}}               % Entry name (birth, address, etc.)
-	#2 \small \par \normalsize}    % Entry value
+	\textit{#1}:#2
+}
 
-\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
-	\noindent \textbf{#1} \hfill      % Study
-	\par
-	\noindent\hangindent=5em\hangafter=0 \small #2 % Description
-	\small \par \normalsize}
-	
+\newcommand{\SkillsEntry}[2]{
+	\noindent \textbf{#1}\small \par \normalsize		% Title
+	\noindent\hangindent=2em\hangafter=0 \small #2		% Description
+	\normalsize \par \normalsize}
+
 \newcommand{\OccupationEntry}[4]{
-	\noindent \textbf{#1} \hfill \textbf{#2} \small \par \normalsize                   % Duration
-	\noindent \textit{#3} \small \par \normalsize         % School
-	\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+	\noindent \textbf{#1} \hfill \textbf{#2} \small \par \normalsize % Duration
+	\noindent \textit{#3} \small \par \normalsize			 % School
+	\noindent\hangindent=2em\hangafter=0 \small #4			 % Description
 	\normalsize \par \normalsize}
 \begin{document}
 
@@ -67,15 +54,24 @@
 
 %%% Personal details
 %%% ------------------------------------------------------------
-\NewPart{Contact details}{}
-\PersonalEntry{Address}{32 Pearl Close, Cambridge, CB4 1QD}
-\PersonalEntry{Phone}{\href{tel:+447365536032}{+447365536032}}
-\PersonalEntry{Email}{\href{mailto:jah1809@gmail.com}{jah1809@gmail.com}}
+\begin{center}
+	\PersonalEntry{Address}{32 Pearl Close, Cambridge, CB4 1QD}
+	\middledot
+	\PersonalEntry{Phone}{\href{tel:+447365536032}{+447365536032}}
+	\middledot
+	\PersonalEntry{Email}{\href{mailto:jah1809@gmail.com}{jah1809@gmail.com}}
+	\middledot
+	\PersonalEntry{GitHub}{\href{http://github.com/joelhutton}{JoelHutton}}
+	\middledot
+	\PersonalEntry{LinkedIn}{\href{http://github.com/joelhutton}{JoelHutton}}
+	\middledot
+	\PersonalEntry{latest CV}{\href{http://joelhutton.me/cv.pdf}{joelhutton.me/cv.pdf}}
+\end{center}
+\vspace{-3mm}
 
 %%% Education
 %%% ------------------------------------------------------------
 \NewPart{Education}{}
-
 \OccupationEntry{BEng. Computer Science and Electronics (1st) }
 	{2013-2017}
 	{University of Edinburgh}
@@ -97,7 +93,6 @@
 %%% Work experience
 %%% ------------------------------------------------------------
 \NewPart{Employment history}{}
-
 \OccupationEntry{Compiler Engineer - GNU Tools}
 	{2019-present}
 	{Arm, Full-time}
@@ -152,8 +147,6 @@
 	{COSAT Khayelitsha-Cape Town, Full-time volunteer}
 	{Volunteer STEM teaching of high school children in an underprivileged
 	community}
-%%% Skills
-%%% ------------------------------------------------------------
 \NewPart{Skills}{}
 \SkillsEntry{Programming languages}
 	{C, Python, Shell, Arm v8-A assembly, Arm v7-A assembly}
