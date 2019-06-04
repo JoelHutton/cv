@@ -9,11 +9,12 @@
 \usepackage[protrusion=true,expansion=true]{microtype}
 \usepackage{amsmath,amsfonts,amsthm}				% Math packages
 \usepackage{graphicx}						% Enable pdflatex
-\usepackage[left=2cm, right=1.4cm, top=1cm, bottom=1cm]{geometry}
+\usepackage[left=1.4cm, right=1.4cm, top=1cm, bottom=1cm]{geometry}
 \usepackage{hyperref}
 \textheight=700px
 \frenchspacing
 \pagestyle{empty}						% No pagenumbers/headers/footers
+
 
 \newcommand{\MyName}[2]{ % Name
 	\begin{center}
@@ -22,11 +23,11 @@
 	}
 
 \newcommand{\NewPart}[1]{
-	\vspace*{-4mm}
+	\vspace*{-2mm}
 	\section*{\uppercase{#1}}				%Title
 	\vspace*{-7mm}
 	\noindent\rule{\textwidth}{1pt}
-	\vspace*{-3mm}
+	\vspace*{-2mm}
 	\\
 	}
 
@@ -45,9 +46,11 @@
 
 \newcommand{\OccupationEntry}[4]{
 	\noindent \textbf{#1} \hfill \textbf{#2} \small \par \normalsize % Duration
-	\noindent \textit{#3} \small \par \normalsize			 % School
+	\noindent \vspace{-0.5mm} \textit{#3} \small \par \normalsize	 % School/Workplace
 	\noindent\hangindent=2em\hangafter=0 \small #4			 % Description
-	\normalsize \par \normalsize}
+	\normalsize \par \normalsize
+	\vspace{1mm}
+	}
 \begin{document}
 
 \MyName{Joel Hutton}
@@ -69,8 +72,6 @@
 \end{center}
 \vspace{-3mm}
 
-%%% Education
-%%% ------------------------------------------------------------
 \NewPart{Education}{}
 \OccupationEntry{BEng. Computer Science and Electronics (1st) }
 	{2013-2017}
@@ -90,8 +91,6 @@
 		Biology: \textbf{A}
 	}
 
-%%% Work experience
-%%% ------------------------------------------------------------
 \NewPart{Employment history}{}
 \OccupationEntry{Compiler Engineer - GNU Tools}
 	{2019-present}
@@ -104,8 +103,8 @@
 	{2017-2019}
 	{Arm, Full-time}
 	{Firmware engineering in C, Arm v8-A assembly and Arm v7-A assembly.
-		Tools in C. Owner of continuous integration in Shell and Python.
-		Produced Spectre mitigations in Trusted Firmware, made
+		Tools in C. Maintainer of continuous integration in Shell and Python.
+		Produced Spectre mitigations for Trusted Firmware, made
 		significant memory optimisations.
 	}
 \OccupationEntry{Software Engineer}
