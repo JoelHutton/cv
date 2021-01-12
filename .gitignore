@@ -1,4 +1,6 @@
 *.aux
 *.log
 *.gz
+*.out
+*.pdf
 build
